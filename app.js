@@ -37,4 +37,4 @@ app.use('/course', courseRouter);
 //     res.status(500).send('程式問題')
 // })
 
-app.get('*', (req,res) => res.sendFile(path.join(__dirname+'/public/index.html'))).listen(3001,'0.0.0.0')
+app.get('*', (req,res) => res.sendFile(path.join(__dirname+'/public/index.html'))).listen(3000,'0.0.0.0')
