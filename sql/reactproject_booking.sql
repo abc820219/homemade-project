@@ -16,32 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `member_like`
+-- Table structure for table `booking`
 --
 
-DROP TABLE IF EXISTS `member_like`;
+DROP TABLE IF EXISTS `booking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `member_like` (
-  `like_sid` int NOT NULL AUTO_INCREMENT COMMENT '會員喜好編號',
-  `member_sid` int NOT NULL DEFAULT '0' COMMENT '會員編號',
-  `like_first` varchar(255) NOT NULL DEFAULT '"' COMMENT '喜好一',
-  `like_second` varchar(255) NOT NULL DEFAULT '"' COMMENT '喜好二',
-  `like_third` varchar(255) NOT NULL DEFAULT '"' COMMENT '喜好三',
-  `like_fourth` varchar(255) NOT NULL DEFAULT '"' COMMENT '喜好四',
-  `like_fifth` varchar(255) NOT NULL DEFAULT '"' COMMENT '喜好五',
-  `like_sixth` varchar(255) NOT NULL DEFAULT '"' COMMENT '喜好六',
-  PRIMARY KEY (`like_sid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='會員喜好表';
+CREATE TABLE `booking` (
+  `booking_sid` int NOT NULL,
+  `booking_total` int NOT NULL DEFAULT '0',
+  `booking_course_id` int NOT NULL,
+  `booking_teacher_id` int NOT NULL,
+  `booking_time` int NOT NULL,
+  `booking_date` int NOT NULL,
+  `booking_month` int NOT NULL,
+  PRIMARY KEY (`booking_sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `member_like`
+-- Dumping data for table `booking`
 --
 
-LOCK TABLES `member_like` WRITE;
-/*!40000 ALTER TABLE `member_like` DISABLE KEYS */;
-/*!40000 ALTER TABLE `member_like` ENABLE KEYS */;
+LOCK TABLES `booking` WRITE;
+/*!40000 ALTER TABLE `booking` DISABLE KEYS */;
+INSERT INTO `booking` VALUES (1,1,1,1,1,13,7),(2,6,2,1,0,13,7),(3,1,4,2,1,10,8),(4,7,7,3,0,8,7),(5,10,4,4,1,15,7);
+/*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-04 13:21:22
+-- Dump completed on 2021-07-19 19:42:40

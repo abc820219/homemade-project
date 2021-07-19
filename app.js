@@ -9,6 +9,8 @@ const indexRouter = require('./routes/index');
 const memberRouter = require('./routes/member');
 const teacherRouter = require('./routes/teacher');
 const courseRouter = require('./routes/course');
+const likeRouter = require('./routes/like');
+const bookRouter = require('./routes/book');
 app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
@@ -27,6 +29,8 @@ app.use('/', indexRouter);
 app.use('/member', memberRouter);
 app.use('/teacher', teacherRouter);
 app.use('/course', courseRouter);
+app.use('/like', likeRouter);
+app.use('/book', bookRouter);
 // 404
 // app.use((req, res)=>{
 //     res.status(404).send('404')

@@ -30,7 +30,7 @@ CREATE TABLE `member` (
   `member_phone` varchar(255) DEFAULT '' COMMENT '手機',
   `member_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增帳號時間',
   PRIMARY KEY (`member_sid`)
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8 COMMENT='會員表';
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8 COMMENT='會員表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `member` (
 
 LOCK TABLES `member` WRITE;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES (1,'beerBar21@gmail.com','test','test','test','2019-11-01 14:54:04'),(80,'test','test','test','','2021-07-01 22:32:20'),(81,'test','test','test','','2021-07-01 23:07:23'),(82,'test@yahoo.com','test','test','','2021-07-02 10:22:40'),(83,'z27089433@gmail.com','123','asdft','12346767','2021-07-02 12:52:16'),(84,'z27089433@gmail.com','123','asd','','2021-07-02 12:52:27'),(85,'z270894@gmail.com','123123','[object Object]','','2021-07-02 12:52:36'),(86,'test@gamil.com','123','123','','2021-07-02 12:59:20'),(87,'z27089433@gmail.com','asdf','asdf','','2021-07-02 13:42:45');
+INSERT INTO `member` VALUES (1,'beerBar21@gmail.com','test','test','test123','2019-11-01 14:54:04'),(80,'test','test','test','','2021-07-01 22:32:20'),(81,'test','test','test','','2021-07-01 23:07:23'),(82,'test@yahoo.com','test','test','','2021-07-02 10:22:40'),(83,'z27089433@gmail.com','[object Object]','123werwer','000','2021-07-02 12:52:16'),(84,'z27089433@gmail.com','123','asd66123569999','','2021-07-02 12:52:27'),(85,'z270894@gmail.com','123123','[object Object]','','2021-07-02 12:52:36'),(86,'test@gamil.com','123','123','','2021-07-02 12:59:20'),(87,'z27089433@gmail.com','asdf','asdf','','2021-07-02 13:42:45'),(88,'z270894333@gmail.com','123','23','','2021-07-05 21:58:35'),(89,'z270894332@gmail.com','456','567','','2021-07-05 21:58:51'),(90,'z270@gmail.com','123','123','','2021-07-05 21:59:25'),(91,'tt@gmail.com','123','123','345','2021-07-06 23:31:11'),(92,'a@gmail.com','123','23','','2021-07-07 22:49:19'),(93,'z@gmail.com','123','123','','2021-07-07 22:50:04'),(94,'123@gmail.com','asdfas','sdfa','','2021-07-07 22:50:49'),(95,'456@gmail.com','456','456','','2021-07-12 12:44:56'),(96,'789@gmail.com','789','789','','2021-07-12 12:45:36');
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-04 13:21:22
+-- Dump completed on 2021-07-19 19:44:53

@@ -10,8 +10,7 @@ const getMember = (req, res) => {
     }
     const sql = "select * from member where member_sid = ?"
     const placeholders = [memberId]
-    const callback = (err, data) => {
-        console.log(data)
+    const callback = (err, userData) => {
         if (err) {
             res.send({
                 status: 400,
@@ -19,11 +18,52 @@ const getMember = (req, res) => {
             })
             return
         }
-        res.send({
-            status: 200,
-            data: data[0]
-
-        })
+        if (err || !userData.length) {
+            res.send({
+                status: 400,
+                err: '登入失敗'
+            })
+            return
+        }
+        const sql = "SELECT * FROM teacher_like tl inner join teacher t on tl.teacher_sid = t.teacher_sid where member_sid = ?"
+        const placeholders = [memberId]
+        const callback = (err, userLikeTeacher) => {
+            if (err) {
+                res.send({
+                    status: 400,
+                    err: err
+                })
+                return
+            }
+            if (err || !userData.length) {
+                res.send({
+                    status: 400,
+                    err: '登入失敗'
+                })
+                return
+            }
+            const sql = "SELECT * FROM course_like cl inner join course c on cl.course_sid = c.course_sid where member_sid = ?"
+            const placeholders = [memberId]
+            const callback = (err, userLikeCourse) => {
+                if (err) {
+                    res.send({
+                        status: 400,
+                        err: err
+                    })
+                    return
+                }
+                res.send({
+                    status: 200,
+                    data: {
+                        userInfo:userData[0],
+                        teacher_like:userLikeTeacher,
+                        course_like:userLikeCourse
+                    },
+                })
+            }
+            dbConfig.sqlConnect(sql, placeholders, callback)
+        }
+        dbConfig.sqlConnect(sql, placeholders, callback)
     }
     dbConfig.sqlConnect(sql, placeholders, callback)
 }
