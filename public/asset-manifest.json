@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.e7811231.chunk.css",
-    "main.js": "/static/js/main.c166282e.chunk.js",
-    "main.js.map": "/static/js/main.c166282e.chunk.js.map",
+    "main.css": "/static/css/main.91a63ab2.chunk.css",
+    "main.js": "/static/js/main.87505e86.chunk.js",
+    "main.js.map": "/static/js/main.87505e86.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.21173e5c.js",
     "runtime-main.js.map": "/static/js/runtime-main.21173e5c.js.map",
     "static/css/2.d972ee17.chunk.css": "/static/css/2.d972ee17.chunk.css",
-    "static/js/2.cbae9e09.chunk.js": "/static/js/2.cbae9e09.chunk.js",
-    "static/js/2.cbae9e09.chunk.js.map": "/static/js/2.cbae9e09.chunk.js.map",
+    "static/js/2.31fc1ceb.chunk.js": "/static/js/2.31fc1ceb.chunk.js",
+    "static/js/2.31fc1ceb.chunk.js.map": "/static/js/2.31fc1ceb.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.d972ee17.chunk.css.map": "/static/css/2.d972ee17.chunk.css.map",
-    "static/css/main.e7811231.chunk.css.map": "/static/css/main.e7811231.chunk.css.map",
-    "static/js/2.cbae9e09.chunk.js.LICENSE.txt": "/static/js/2.cbae9e09.chunk.js.LICENSE.txt",
+    "static/css/main.91a63ab2.chunk.css.map": "/static/css/main.91a63ab2.chunk.css.map",
+    "static/js/2.31fc1ceb.chunk.js.LICENSE.txt": "/static/js/2.31fc1ceb.chunk.js.LICENSE.txt",
     "static/media/LOGOLEFT.svg": "/static/media/LOGOLEFT.f1581582.svg",
     "static/media/baguette.svg": "/static/media/baguette.2dc2816d.svg",
     "static/media/member.scss": "/static/media/board.6db8383a.jpg",
@@ -21,6 +21,7 @@
     "static/media/handmade-course.svg": "/static/media/handmade-course.335ddf83.svg",
     "static/media/handmade-intro.svg": "/static/media/handmade-intro.ae6ade34.svg",
     "static/media/handmade-teacher.svg": "/static/media/handmade-teacher.7e9ddbfc.svg",
+    "static/media/home.jpg": "/static/media/home.0394dc53.jpg",
     "static/media/sidebar-booking.png": "/static/media/sidebar-booking.cc569865.png",
     "static/media/sidebar-course.png": "/static/media/sidebar-course.454c5286.png",
     "static/media/sidebar-teacher.png": "/static/media/sidebar-teacher.f46b4a48.png",
@@ -56,8 +57,8 @@
   "entrypoints": [
     "static/js/runtime-main.21173e5c.js",
     "static/css/2.d972ee17.chunk.css",
-    "static/js/2.cbae9e09.chunk.js",
-    "static/css/main.e7811231.chunk.css",
-    "static/js/main.c166282e.chunk.js"
+    "static/js/2.31fc1ceb.chunk.js",
+    "static/css/main.91a63ab2.chunk.css",
+    "static/js/main.87505e86.chunk.js"
   ]
 }

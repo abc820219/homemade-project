@@ -1,7 +1,7 @@
 const dbConfig = require('../util/dbconfig.js')
 const getMember = (req, res) => {
     const { memberId } = req.session
-    if(!memberId){
+    if (!memberId) {
         res.send({
             status: 400,
             err: "尚未登入"
@@ -35,13 +35,6 @@ const getMember = (req, res) => {
                 })
                 return
             }
-            if (err || !userData.length) {
-                res.send({
-                    status: 400,
-                    err: '登入失敗'
-                })
-                return
-            }
             const sql = "SELECT * FROM course_like cl inner join course c on cl.course_sid = c.course_sid where member_sid = ?"
             const placeholders = [memberId]
             const callback = (err, userLikeCourse) => {
@@ -52,14 +45,27 @@ const getMember = (req, res) => {
                     })
                     return
                 }
-                res.send({
-                    status: 200,
-                    data: {
-                        userInfo:userData[0],
-                        teacher_like:userLikeTeacher,
-                        course_like:userLikeCourse
-                    },
-                })
+                const sql = "SELECT * FROM ((booked inner join booking on booked.booking_sid = booking.booking_sid) inner join course on booking_course_id = course.course_sid) inner join teacher on booking_teacher_id = teacher.teacher_sid where member_sid = ?"
+                const placeholders = [memberId]
+                const callback = (err, userBooked) => {
+                    if (err) {
+                        res.send({
+                            status: 400,
+                            err: err
+                        })
+                        return
+                    }
+                    res.send({
+                        status: 200,
+                        data: {
+                            userInfo: userData[0],
+                            teacher_like: userLikeTeacher,
+                            course_like: userLikeCourse,
+                            booked: userBooked
+                        },
+                    })
+                }
+                dbConfig.sqlConnect(sql, placeholders, callback)
             }
             dbConfig.sqlConnect(sql, placeholders, callback)
         }
@@ -107,7 +113,7 @@ const loginMember = (req, res) => {
     dbConfig.sqlConnect(sql, placeholders, callback)
 }
 
-const insertMember = async (req, res) => {
+const insertMember = async(req, res) => {
     const { email, name, password } = req.body
     const emailReg = /^[^[\]()\\<>:;,@.]+[^[\]()\\<>:;,@]*@[a-z0-9A-Z]+(([.]?[a-z0-9A-Z]+)*[-]*)*[.]([a-z0-9A-Z]+[-]*)+$/g
     if (emailReg.test(email) == false) {
