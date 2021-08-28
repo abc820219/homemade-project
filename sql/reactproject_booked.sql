@@ -23,11 +23,13 @@ DROP TABLE IF EXISTS `booked`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `booked` (
-  `booked_sid` int NOT NULL,
+  `booked_sid` int NOT NULL AUTO_INCREMENT,
   `member_sid` int NOT NULL,
   `booking_sid` int NOT NULL,
+  `prime` longtext NOT NULL,
+  `people` int NOT NULL,
   PRIMARY KEY (`booked_sid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +38,7 @@ CREATE TABLE `booked` (
 
 LOCK TABLES `booked` WRITE;
 /*!40000 ALTER TABLE `booked` DISABLE KEYS */;
-INSERT INTO `booked` VALUES (1,1,1);
+INSERT INTO `booked` VALUES (1,1,1,'1',1),(8,97,3,'03d3d757ee75fcca6bf3d16725fa955555f3c603ad2282bb3f1dc997c0a23118',4),(9,97,3,'a05dd913122ea7bddbc7a1ca6b8140af053c295df8a7c3dbb561c0435d9bde37',100),(10,99,3,'f0ff18e3f42174d7297021913ed92390d7ff1812c715e06fe4350e229a350157',1),(11,99,3,'982d15f8a01362ad58ed98579f695632ff348c38af56e824ca9c71b7c17ef345',4);
 /*!40000 ALTER TABLE `booked` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-19 19:42:40
+-- Dump completed on 2021-08-22 16:47:04
